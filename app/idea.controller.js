@@ -1,8 +1,12 @@
 angular
     .module('UbiHeard')
-    .controller('IdeaController',IdeaController);
+    .controller('IdeaController',['$routeParams',IdeaController]);
 
 function IdeaController(){
    
-    console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
+      var vm = this;
+
+    vm.suggestions = JSON.parse(window.localStorage.getItem('suggestions'));
+    console.log(suggestions[2]);
+
 }
