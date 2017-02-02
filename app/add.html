@@ -5,6 +5,8 @@
 </div>
 <h1>We'd love hear your suggestions. Tell us how we could make our games a stellar experience !</h1>
 <div>
-  <input type="text" placeholder="Add your suggestion" />
-  <button type="button">Add</button>
+  <form>
+    <input type="text" placeholder="Add your suggestion" ng-model="vm.title" ng-change="vm.onTitleChange();" />
+    <button type="button">Add</button>
+  </form>
 </div>

@@ -58,5 +58,5 @@ angular
 	}
 ];
 if(!window.localStorage.getItem('suggestions')) {
-	window.localStorage.setItem('suggestions',suggestions);
+	window.localStorage.setItem('suggestions',JSON.stringify(suggestions));
 }
