@@ -11,7 +11,7 @@ if(!window.localStorage.getItem('categories')) {
 			"name": "Jhon do"
 		},
 		"category" : 'Gameplay',
-		"title": "suggestion title",
+		"title": "Great Suggestion",
 		"description": "sugesstion text",
 		"comments": [{
 			"from": {
@@ -22,7 +22,7 @@ if(!window.localStorage.getItem('categories')) {
 			"message": "comment message"
 		}],
 		"createdAt": "date",
-		"votes": 500
+		"votes": 999
 	}, {
 		"id": 2,
 		"category" : 'Gameplay',
@@ -30,7 +30,7 @@ if(!window.localStorage.getItem('categories')) {
 			"picture": "fake url",
 			"name": "Jhon do"
 		},
-		"title": "suggestion title",
+		"title": "Good Suggestion",
 		"description": "sugesstion text",
 		"comments": [{
 			"from": {
@@ -49,7 +49,7 @@ if(!window.localStorage.getItem('categories')) {
 			"picture": "fake url",
 			"name": "Jhon do"
 		},
-		"title": "suggestion title",
+		"title": "Shit Suggestion",
 		"description": "sugesstion text",
 		"comments": [{
 			"from": {
@@ -60,7 +60,7 @@ if(!window.localStorage.getItem('categories')) {
 			"message": "comment message"
 		}],
 		"createdAt": "date",
-		"votes": 500
+		"votes": 0
 	}
 ];
 if(!window.localStorage.getItem('suggestions')) {

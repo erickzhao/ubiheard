@@ -1,1 +1,16 @@
-asdsadsadsa
+<div class="text-center">
+    <h1> Ideas </h1>
+</div>
+
+<div class="container-fluid">
+    <div ng-repeat="suggestion in vm.suggestions | orderBy:'-votes'">
+        <div class="row">
+            <div class="col-xs-12">
+                {{ suggestion.votes }}
+            </div>
+            <div class="col-xs-3">
+                <span>{{ suggestion.title }}</span>
+            </div>
+        </div>
+    </div>
+</div>
