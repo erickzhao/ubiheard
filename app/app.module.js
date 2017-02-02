@@ -57,4 +57,6 @@ angular
 		"votes": 500
 	}
 ];
-Window.localStorage.setItem('suggestions',suggestions);
+if(!window.localStorage.getItem('suggestions')) {
+	window.localStorage.setItem('suggestions',suggestions);
+}
