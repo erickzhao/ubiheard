@@ -2,6 +2,6 @@ angular
     .module('UbiHeard')
     .controller('ListingController',ListingController);
 
-function ListingController(){
+function ListingController() {
     
 }
