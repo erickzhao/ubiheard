@@ -13,7 +13,7 @@
         <a style="float:right;" ng-href="#/add"><i class="fa fa-plus fa-3x" aria-hidden="true"></i></i></a>
         <hr>
     </div>
-    <div ng-repeat="suggestion in vm.suggestions | orderBy:vm.orderingProperty" ng-if="suggestion.category == vm.selectedCategory || vm.selectedCategory == 'All'">
+    <div ng-repeat="suggestion in vm.suggestions | orderBy:vm.orderingProperty" ng-if="suggestion.category == vm.selectedCategory || vm.selectedCategory == 'All'" class="row-animate">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 col-s-1 vote-box">
