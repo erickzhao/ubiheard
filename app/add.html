@@ -31,7 +31,7 @@
                 <div class="col-xs-10 col-s-11">
                     <a ng-href="#/ideas/{{match.id}}"><h4>{{ match.title }}</h4></a>
                     <div class="additional-info">
-                        <img ng-src="match.from.picture" style="width:20px;height:20px"/>
+                        <img ng-src="{{match.from.picture}}" style="width:20px;height:20px"/>
                         <span>Posted by <strong>{{ match.from.name }}</strong></span>
                         <a ng-href="ng-href="#/ideas/{{match.id}}">
                             <span>{{ match.comments.length }}</span>

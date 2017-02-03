@@ -1,21 +1,30 @@
 <div class="row">
     <div class="col-xs-3"></button></div>
-    <div class="col-xs-6"><h2><strong>{{vm.suggestions[0].title}}</strong></h2></div>
+    <div class="col-xs-6"><h2><strong>{{vm.selected.title}}</strong></h2></div>
     <div class="col-xs-3"></div>
 </div>
-<div class="container">
     <div class="row">
         <div class="col-xs-3">
             <div style="float: right;">
                 <button type="button" class="btn btn-success">Vote</button>
                 <br>
-                <h4>{{vm.suggestions[0].votes}} votes</h4>
+                <h4>{{vm.selected.votes}} votes</h4>
             </div>
         </div>
         <div class="col-xs-9">
-            <p>
-            {{vm.suggestions[0].description}}
-            <p>
+             <div ng-bind-html="vm.selected.description"></div> 
         </div>
+
     </div>
+    <div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-6"><strong>Commnets({{vm.comments.length}})</strong></div>
+    <div class="col-xs-3"></div>
+    </div>
+     <div class="row" ng-repeat="comment in vm.comments">
+     <div class="col-xs-3"></div>
+    <div class="col-xs-6">{{comment.message}}</div>
+    <div class="col-xs-3"></div>
+
 </div>
+
