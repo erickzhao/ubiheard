@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>We'd love hear your suggestions.</h1>
+  <h1>We'd love hear to your suggestions.</h1>
   <h4>Tell us how we could make our games a stellar experience !</h2>
 </div>
 <div>
@@ -11,7 +11,7 @@
 
     <div ng-show="vm.isAdding" style="width: 70vw; margin: 0 auto;">
       <select ng-model='vm.selectedCategory' ng-options='category for category in vm.categories'></select>
-      <textarea id="editor" name="editor1" ng-model='vm.description'></textarea>
+      <textarea id="editor1" name="editor1" ng-model='vm.description'></textarea>
       <button type="button" class="btn btn-default" ng-click="vm.add();">Submit</button>
       <button type="button" class="btn btn-default" ng-click="vm.isAdding = false;">Cancel</button>
     </div>

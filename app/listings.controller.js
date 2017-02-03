@@ -19,6 +19,7 @@ function ListingController() {
             vm.suggestions[id-1].votes--;
             vm.suggestions[id-1].voted = false;
         }
+        window.localStorage.setItem('suggestions',JSON.stringify(vm.suggestions));
     }
 
 

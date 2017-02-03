@@ -10,21 +10,21 @@ function AddController($location){
     vm.categories =  JSON.parse(window.localStorage.getItem('categories'));
     vm.description = 'Describes your suggestions here !';
     vm.selectedCategory = vm.categories[0];
-    var suggestions = JSON.parse(window.localStorage.getItem('suggestions'));
+    vm.suggestions = JSON.parse(window.localStorage.getItem('suggestions'));
     // event fired when we type in some text into title
     vm.onTitleChange = function() {
       if(vm.title === '') {
         vm.filtered = [];
         return;
       }
-      vm.filtered = _.filter(suggestions,function(s){
+      vm.filtered = _.filter(vm.suggestions,function(s){
         return _.includes(s.title, vm.title);
       });
     }
     vm.add = function() {
 
       var newSuggestion  = {
-    		"id": Math.max.apply(Math,suggestions.map(function(o){return o.id;})) +  1,
+    		"id": Math.max.apply(Math,vm.suggestions.map(function(o){return o.id;})) +  1,
     		"from": {
     			"picture": "https://randomuser.me/api/portraits/men/3.jpg",
     			"name": "me"
@@ -43,15 +43,16 @@ function AddController($location){
       $location.path("ideas/"+newSuggestion.id);
     }
 
-    function addVote(id) {
-
-        if (!vm.suggestions[id-1].voted) {
-            vm.suggestions[id-1].votes++;
-            vm.suggestions[id-1].voted = true;
+    vm.addVote = function(id) {
+        var sg = _.find(vm.suggestions, ['id', id]);
+        if (!sg.voted) {
+            sg.votes++;
+            sg.voted = true;
         } else {
-            vm.suggestions[id-1].votes--;
-            vm.suggestions[id-1].voted = false;
+          sg.votes--;
+          sg.voted = false;
         }
+        window.localStorage.setItem('suggestions',JSON.stringify(vm.suggestions));
     }
 
 }
