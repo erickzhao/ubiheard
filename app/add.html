@@ -1,29 +1,47 @@
-<div class="main">
-  <a>
-    <img src="http://vignette2.wikia.nocookie.net/ichc-channel/images/8/8c/Ubisoft.png/revision/latest?cb=20160327140002" width="150px" />
-  </a>
+<div class="text-center">
+  <h1>We'd love hear your suggestions.</h1>
+  <h4>Tell us how we could make our games a stellar experience !</h2>
 </div>
-<h1>We'd love hear your suggestions. Tell us how we could make our games a stellar experience !</h1>
 <div>
   <form>
+    <div class="container-fluid" id="title-container">
+      <input id="title-input" type="text" placeholder="Add your suggestion." ng-model="vm.title" ng-change="vm.onTitleChange();" />
+      <a ng-click="vm.isAdding = true;"><i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true"></i></a>
+    </div>
 
-    <span>Title :</span>
-    <input type="text" placeholder="Add your suggestion" ng-model="vm.title" ng-change="vm.onTitleChange();" />
-    <button type="button" ng-click="vm.isAdding = true;">Add</button>
-    <div ng-show="vm.isAdding">
-      <select ng-model='vm.selectedCategory'  ng-options='category for category in vm.categories'></select>
-      <textarea name="editor1" ng-model='vm.description'></textarea>
-      <button type="button" ng-click="vm.add();">Submit</button>
-      <button type="button" ng-click="vm.isAdding = false;">Cancel</button>
+    <div ng-show="vm.isAdding" style="width: 70vw; margin: 0 auto;">
+      <select ng-model='vm.selectedCategory' ng-options='category for category in vm.categories'></select>
+      <textarea id="editor" name="editor1" ng-model='vm.description'></textarea>
+      <button type="button" class="btn btn-default" ng-click="vm.add();">Submit</button>
+      <button type="button" class="btn btn-default" ng-click="vm.isAdding = false;">Cancel</button>
     </div>
   </form>
 
   <div ng-hide="vm.filtered == null || vm.filtered.length == 0 || vm.isAdding">
-    <p>Check out these similar ideas</p>
+    <p>Check out these similar ideas:</p>
     <div ng-repeat="match in vm.filtered | orderBy:-votes track by match.id">
-      <span>{{match.votes}}</span>
-      <p><a ng-href="#/ideas/{{match.id}}">{{match.title}}</a></p>
-      <div ng-bind-html="match.description"></div>
-    </div>
+      <div class="container">
+            <div class="row">
+                <div class="col-xs-2 col-s-1 vote-box">
+                    <div class="vote-number-box">
+                        <span class="vote-text">{{match.votes}}</span>
+                        <button style="width: 100%;" type="button" class="btn" ng-click="vm.addVote(match.id)" ng-class="match.voted ? 'btn-success':'btn-default'">Vote</button>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-s-11">
+                    <a ng-href="#/ideas/{{match.id}}"><h4>{{ match.title }}</h4></a>
+                    <div class="additional-info">
+                        <img ng-src="http://lorempixel.com/400/200/" style="width:20px;height:20px"/>
+                        <span>Posted by <strong>{{ match.from.name }}</strong></span>
+                        <a ng-href="ng-href="#/ideas/{{match.id}}">
+                            <span>{{ match.comments.length }}</span>
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </a>
+                        <span class="hidden-xs category">#{{ match.category }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
   </div>
 </div>

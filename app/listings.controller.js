@@ -7,5 +7,19 @@ function ListingController() {
 
     vm.suggestions = JSON.parse(window.localStorage.getItem('suggestions'));
 
-    console.log(suggestions[0]);
+    vm.addVote = addVote;
+
+
+    function addVote(id) {
+
+        if (!vm.suggestions[id-1].voted) {
+            vm.suggestions[id-1].votes++;
+            vm.suggestions[id-1].voted = true;
+        } else {
+            vm.suggestions[id-1].votes--;
+            vm.suggestions[id-1].voted = false;
+        }
+    }
+
+
 }

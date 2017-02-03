@@ -43,4 +43,15 @@ function AddController($location){
       $location.path("ideas/"+newSuggestion.id);
     }
 
+    function addVote(id) {
+
+        if (!vm.suggestions[id-1].voted) {
+            vm.suggestions[id-1].votes++;
+            vm.suggestions[id-1].voted = true;
+        } else {
+            vm.suggestions[id-1].votes--;
+            vm.suggestions[id-1].voted = false;
+        }
+    }
+
 }

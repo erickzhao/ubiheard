@@ -4,13 +4,28 @@
 
 <div class="container-fluid">
     <div ng-repeat="suggestion in vm.suggestions | orderBy:'-votes'">
-        <div class="row">
-            <div class="col-xs-12">
-                {{ suggestion.votes }}
-            </div>
-            <div class="col-xs-3">
-                <span>{{ suggestion.title }}</span>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2 col-s-1 vote-box">
+                    <div class="vote-number-box">
+                        <span class="vote-text">{{suggestion.votes}}</span>
+                        <button style="width: 100%;" type="button" class="btn" ng-click="vm.addVote(suggestion.id)" ng-class="suggestion.voted ? 'btn-success':'btn-default'">Vote</button>
+                    </div>
+                </div>
+                <div class="col-xs-10 col-s-11">
+                    <a ng-href="#/ideas/{{suggestion.id}}"><h4>{{ suggestion.title }}</h4></a>
+                    <div class="additional-info">
+                        <img ng-src="http://lorempixel.com/400/200/" style="width:20px;height:20px"/>
+                        <span>Posted by <strong>{{ suggestion.from.name }}</strong></span>
+                        <a ng-href="ng-href="#/ideas/{{suggestion.id}}">
+                            <span>{{ suggestion.comments.length }}</span>
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </a>
+                        <span class="hidden-xs category">#{{ suggestion.category }}</span>
+                    </div>
+                </div>
             </div>
         </div>
+        <hr>
     </div>
 </div>
