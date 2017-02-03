@@ -1,9 +1,17 @@
 <div class="text-center">
     <h1> Ideas </h1>
+    <hr>
 </div>
 
 <div class="container-fluid">
-    <div ng-repeat="suggestion in vm.suggestions | orderBy:'-votes'">
+    <div style="width: 75vw; margin: 0 auto;">
+        <button class="btn" ng-click="vm.sortBy('-votes')" ng-class="vm.orderingProperty=='-votes' ? 'btn-success':'btn-default'">Top</button>
+        <button style="margin-right: 15px" class="btn" ng-click="vm.sortBy('-createdAt')" ng-class="vm.orderingProperty=='-createdAt' ? 'btn-success':'btn-default'">New</button>
+        <span>Category: </span>
+        <select ng-model='vm.selectedCategory' ng-options='category for category in vm.categories'></select>
+        <hr>
+    </div>
+    <div ng-repeat="suggestion in vm.suggestions | orderBy:vm.orderingProperty" ng-if="suggestion.category == vm.selectedCategory || vm.selectedCategory == 'All'">
         <div class="container">
             <div class="row">
                 <div class="col-xs-2 col-s-1 vote-box">
@@ -21,6 +29,7 @@
                             <span>{{ suggestion.comments.length }}</span>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                         </a>
+                        <span>{{ suggestion.createdAt | date: "MMM d, '''yy"}}</span>
                         <span class="hidden-xs category">#{{ suggestion.category }}</span>
                     </div>
                 </div>
