@@ -103,7 +103,7 @@ if(!window.localStorage.getItem('categories')) {
 	"votes": 0
 },
 {
- "id": 5,
+ "id": 6,
  "category" : 'Gameplay',
  "from": {
 	 "picture": "fake url",
@@ -123,7 +123,7 @@ if(!window.localStorage.getItem('categories')) {
  "votes": 0
 },
 {
- "id": 5,
+ "id": 7,
  "category" : 'Gameplay',
  "from": {
 	 "picture": "fake url",

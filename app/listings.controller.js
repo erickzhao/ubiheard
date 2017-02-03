@@ -11,13 +11,13 @@ function ListingController() {
 
 
     function addVote(id) {
-
-        if (!vm.suggestions[id-1].voted) {
-            vm.suggestions[id-1].votes++;
-            vm.suggestions[id-1].voted = true;
+        var sg = _.find(vm.suggestions, ['id', id]);
+        if (!sg.voted) {
+            sg.votes++;
+            sg.voted = true;
         } else {
-            vm.suggestions[id-1].votes--;
-            vm.suggestions[id-1].voted = false;
+          sg.votes--;
+          sg.voted = false;
         }
         window.localStorage.setItem('suggestions',JSON.stringify(vm.suggestions));
     }
