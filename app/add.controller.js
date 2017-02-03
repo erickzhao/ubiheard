@@ -21,15 +21,18 @@ function AddController($location){
         return _.includes(s.title, vm.title);
       });
     }
+    function getRandomFace() {
+      	return "https://randomuser.me/api/portraits/men/"+ Math.floor(Math.random() * 99)+".jpg";
+    }
     vm.add = function() {
 
       var newSuggestion  = {
     		"id": Math.max.apply(Math,vm.suggestions.map(function(o){return o.id;})) +  1,
     		"from": {
-    			"picture": "https://randomuser.me/api/portraits/men/3.jpg",
+    			"picture": getRandomFace(),
     			"name": "me"
     		},
-    		"category" : 'Gameplay',
+    		"category" : vm.selectedCategory,
     		"title": vm.title,
     		"description": CKEDITOR.instances.editor1.getData(),
     		"comments": [],

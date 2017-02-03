@@ -15,7 +15,7 @@
                 <div class="col-xs-10 col-s-11">
                     <a ng-href="#/ideas/{{suggestion.id}}"><h4>{{ suggestion.title }}</h4></a>
                     <div class="additional-info">
-                        <img ng-src="http://lorempixel.com/400/200/" style="width:20px;height:20px"/>
+                        <img ng-src="{{suggestion.from.picture}}" style="width:20px;height:20px"/>
                         <span>Posted by <strong>{{ suggestion.from.name }}</strong></span>
                         <a ng-href="ng-href="#/ideas/{{suggestion.id}}">
                             <span>{{ suggestion.comments.length }}</span>

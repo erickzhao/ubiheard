@@ -9,7 +9,6 @@ function ListingController() {
 
     vm.addVote = addVote;
 
-
     function addVote(id) {
         var sg = _.find(vm.suggestions, ['id', id]);
         if (!sg.voted) {
