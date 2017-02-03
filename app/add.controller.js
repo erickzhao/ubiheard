@@ -39,7 +39,6 @@ function AddController($location){
     		"createdAt": new Date(),
     		"votes": 0
     	};
-      console.log(newSuggestion);
       suggestions.push(newSuggestion);
       //save to localStorage
       window.localStorage.setItem('suggestions',JSON.stringify(suggestions));

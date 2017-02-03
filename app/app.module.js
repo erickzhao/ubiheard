@@ -1,5 +1,5 @@
 angular
-	.module('UbiHeard',['ngRoute','ngSanitize']);
+	.module('UbiHeard',['ngRoute','ngSanitize','ngAnimate']);
 var categories = ['Gameplay', 'Story' , 'Art' , 'User Interface' , 'Other'];
 if(!window.localStorage.getItem('categories')) {
 	window.localStorage.setItem('categories',JSON.stringify(categories));

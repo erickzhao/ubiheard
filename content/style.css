@@ -86,3 +86,15 @@ p, span, h2, h3, h4, h5, h6, li {
 #cke_editor {
     margin: 15px 0 15px 0;
 }
+
+.row-animate {
+    opacity: 1;
+}
+.row-animate.ng-move {
+    -webkit-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+.row-animate.ng-move-active {
+    opacity: 1;
+}
