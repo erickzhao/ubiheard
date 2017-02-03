@@ -18,7 +18,7 @@ function AddController($location){
         return;
       }
       vm.filtered = _.filter(vm.suggestions,function(s){
-        return _.includes(s.title, vm.title);
+        return  (new RegExp(vm.title,"i")).test(s.title);
       });
     }
     function getRandomFace() {
