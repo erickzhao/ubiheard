@@ -1,3 +1,88 @@
 #main-content {
-    margin-top: 40px;
+    margin-top: 60px;
+}
+
+.navbar-inverse .navbar-brand {
+    font-family: 'Bungee Shade', sans-serif;
+    color: white;
+}
+
+h1 {
+    font-family: 'Bungee Shade', sans-serif;
+    margin-bottom: 20px;
+}
+
+.vote-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    padding-left: 0px;
+}
+
+.vote-number-box {
+     margin-top: 10px;
+     text-align: center;
+     width: 55px;
+}
+
+.vote-text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-default {
+    color: #5cb85c;
+    border-width: 2px;
+}
+
+.additional-info > span,i {
+    margin-right: 5px;
+}
+
+.category {
+    padding: 2px 5px 2px 5px;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+}
+
+.centered-div {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+a {
+  color: black;
+}
+
+p, span, h2, h3, h4, h5, h6, li {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*for adding page*/
+
+#title-input {
+    margin: 50px 5px 50px 5px;
+    width: 75vw;
+    font-size: 24px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+}
+
+#title-input:focus {
+    outline-width: 0;
+}
+
+#title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cke_editor {
+    margin: 15px 0 15px 0;
 }
