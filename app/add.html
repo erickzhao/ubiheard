@@ -20,9 +20,10 @@
 
   <div ng-hide="vm.filtered == null || vm.filtered.length == 0 || vm.isAdding">
     <p>Check out these similar ideas</p>
-    <div ng-repeat="match in vm.filtered | orderBy:'-votes'">
+    <div ng-repeat="match in vm.filtered | orderBy:-votes track by match.id">
       <span>{{match.votes}}</span>
-      <p><a ng-href="#/ideas/{{match.id}}">{{match.title}}<a></p>
+      <p><a ng-href="#/ideas/{{match.id}}">{{match.title}}</a></p>
+      <div ng-bind-html="match.description"></div>
     </div>
   </div>
 </div>
