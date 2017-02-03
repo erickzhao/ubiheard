@@ -5,6 +5,7 @@
             <div class="vote-number-box">
                 <span class="vote-text">{{vm.selected.votes}}</span>
                 <button style="width: 100%;" type="button" class="btn" ng-click="vm.addVote(suggestion.id)" ng-class="suggestion.voted ? 'btn-success':'btn-default'">Vote</button>
+                <div style="margin: 40px 0px 0px 10px;"><a ng-href="#/"><i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i></a></div>
             </div>
         </div>
         <div class="col-xs-10 col-s-11">
