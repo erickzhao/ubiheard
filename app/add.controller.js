@@ -33,7 +33,7 @@ function AddController($location){
     		"title": vm.title,
     		"description": CKEDITOR.instances.editor1.getData(),
     		"comments": [],
-    		"createdAt": new Date().toLocaleString(),
+    		"createdAt": new Date(),
     		"votes": 0
     	};
       console.log(newSuggestion);
